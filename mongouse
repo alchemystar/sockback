@@ -1,0 +1,7 @@
+#mongo insert
+import pymongo
+import json
+client = pymongo.MongoClient()
+dp_collection=client.shares.profit_data_2016_02
+dp=ts.get_report_data(2016,2)
+dp_collection.insert(json.loads(dp.to_json(orient='records')))
